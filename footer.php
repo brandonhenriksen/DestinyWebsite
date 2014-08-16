@@ -31,7 +31,6 @@
 <script src="js/jquery.countdown.js"></script>
 <script src="js/jquery.placeholder.js"></script>
 <script src="js/backstretch.js"></script>
-<script src="js/init.js"></script>
 
 </body>
 
