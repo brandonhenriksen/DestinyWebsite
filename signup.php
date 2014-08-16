@@ -1,6 +1,7 @@
-<?php
-include 'header.php';
+<?php error_reporting(-1); ini_set('display_errors', 1); ini_set('html_errors', 1);
 
+
+include 'header.php';
 
 
 if($_SERVER['SERVER_ADDR'] == '127.0.0.1'){
