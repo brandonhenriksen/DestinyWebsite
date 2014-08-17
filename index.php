@@ -135,9 +135,32 @@ include 'header.php';
 
 		   </div> <!-- end section-ads -->		         	         
 
-	   </div> <!-- end call-to-action -->		   	
+	   </div> <!-- end call-to-action -->
 
-   </section> <!-- About Section End-->    
+   </section> <!-- About Section End-->
+
+    <section id="about">
+
+        <div class="row section-header">
+
+            <div class="twelve columns">
+
+             <div class="icon-wrap">
+                    <i class="fa fa-group"></i>
+             </div>
+
+            <h1>Event Calendar</h1>
+
+                <div id="calendar">
+                    <iframe src="https://www.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=4nnliefqr3s0deahkgl4rnta1o%40group.calendar.google.com&amp;color=%23875509&amp;ctz=America%2FChicago" style=" border-width:0 " width="900" height="600" frameborder="0" scrolling="no"></iframe>
+                </div>
+
+            </div>
+        </div> <!-- end section-header -->
+
+
+
+    </section> <!-- About Section End-->
 
 
 
