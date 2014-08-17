@@ -23,7 +23,7 @@ include 'header.php';
    			<!-- Begin MailChimp Signup Form -->
 	         <div id="mc_embed_signup">
                  <a href="signup.php">
-                     <input type="button" value="Sign Up" id="mc-embedded-subscribe" class="roundButton">
+                     <input type="button" value="Join Clan" id="mc-embedded-subscribe" class="roundButton">
                  </a>
 	         </div>
 
