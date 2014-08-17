@@ -1,3 +1,6 @@
+<?php date_default_timezone_set("UTC");
+?>
+
 
 <!DOCTYPE html>
 <!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
@@ -46,11 +49,7 @@
 
     <header class="row">
 
-        <div id="logo" >
-            <a href="#" >
-                <img src="images/logo2.png">
-            </a>
-        </div>
+
 
         <nav id="nav-wrap">
 
@@ -58,8 +57,8 @@
             <a class="menu-btn" href="#" title="Hide navigation">Hide navigation</a>
 
             <ul id="nav" class="nav">
-                <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-                <li><a class="smoothscroll" href="#about">About</a></li>
+                <li class="current"><a class="smoothscroll" href="index.php">Home</a></li>
+
 
             </ul> <!-- end #nav -->
 

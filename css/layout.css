@@ -25,7 +25,13 @@ body { background: #0f0f0f; }
 /* b. Intro Styles
 /* ------------------------------------------------------------------ */
 
+.error
+{
+    color:red;
+}
 #intro {
+   text-align: center;
+   color: white;
    position: relative;
    padding-bottom: 102px;   
    min-height: 900px;
@@ -217,50 +223,47 @@ ul#nav li.current a { color: #0c5ca2; }
 	text-shadow: 0px 1px 2px rgba(0, 0, 0, .7);	
 }
 
-/* mailchimp form */
-#main #mc_embed_signup {
-	clear: both;
-	margin: 48px auto 18px;
-	width: 50%;	
-}
-#main #mc_embed_signup:before,
-#main #mc_embed_signup:after {
-    content: " ";
-    display: table;
-}
-#main #mc_embed_signup:after {
-    clear: both;
-}
 
-#main #mc_embed_signup input {
-	display: inline-block;
-	float: left;
-}
-#main #mc_embed_signup input {
-	font-size: 15px;
-	height: 54px;
-	line-height: 30px;
-	padding: 12px 15px;
-	border-radius: 3px 0 0 3px;	
-	background: #727272;
-	background: rgba(255, 255, 255, .2);	
-	width: 70%;
-}
-#main #mc_embed_signup input[type="submit"] {
-	font-size: 15px;
+
+
+
+.roundButton {
+    font-family:'montserrat-regular';
+    font-size: 20px;
+    color:white;
 	line-height: 30px;
 	height: 54px;
 	padding: 12px 30px;
-	margin: 0 0 18px 0;
-	border-radius: 0 3px 3px 0;	
+	margin: 0 auto;
+    border-radius: 5px;
+    border:none;
 	background: #0c5ca2;
-	background: rgb(12,92,162);	
 	width: 30%;	
 }
-#main #mc_embed_signup input[type="submit"]:hover {
-	background: #fff;
-	color: #0c5ca2;
+
+.roundButton:hover {
+    background: #fff;
+    color: #0c5ca2;
 }
+.gamertagSubmit {
+    font-size: 20px;
+    color:white;
+    line-height: 30px;
+    height: 54px;
+    padding: 12px 30px;
+    margin: 0 auto;
+    border-radius: 5px;
+    border:none;
+    background: #0c5ca2;
+
+    width: 30%;
+}
+.gamertagLabel
+{
+    font-family:'montserrat-regular';
+    font-size: 25px;
+}
+
 
 /* social links */
 #main .social {
@@ -422,40 +425,7 @@ ul#nav li.current a { color: #0c5ca2; }
 /* e. Footer
 /* ------------------------------------------------------------------ */
 
-footer {
-	font: 14px/24px 'montserrat-regular', sans-serif;
-	background: #0f0f0f;
-   padding-top: 24px;
-   padding-bottom: 24px;
-   color: #303030;      
-}
-footer a, footer a:visited { color: #525252; }
-footer a:hover, footer a:focus { color: #fff; }
 
-/* copyright */
-footer .copyright {
-    margin: 0;
-    padding: 0;
-    text-align: center;
- }
-footer .copyright li {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    line-height: 24px;
-}
-.ie footer .copyright li {
-   display: inline;
-}
-footer .copyright li:before {
-    content: "\2022";
-    padding-left: 6px;
-    padding-right: 10px;
-    color: #1B6728;
-}
-footer .copyright  li:first-child:before {
-    display: none;
-}
 
 /* Go To Top Button */
 #go-top {
@@ -484,5 +454,5 @@ footer .copyright  li:first-child:before {
    line-height: 48px;
  	border-radius: 3px;
 }
-#go-top a:hover { background: #165622; }
+#go-top a:hover { background: #0c5ca2; }
 
