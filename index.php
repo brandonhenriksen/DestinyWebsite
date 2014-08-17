@@ -9,7 +9,7 @@ include 'header.php';
 	   			
 	   		<h1>Welcome to Sinister Divine</h1>
 
-	   		<p>Merge Test</p>
+	   		<p>PS4 Destiny Clan</p>
 
 	   		<h5>Time Left Until Launch</h5>
 
