@@ -9,7 +9,7 @@ include 'header.php';
 	   			
 	   		<h1>Welcome to Sinister Divine</h1>
 
-	   		<p>We are a Destiny Clan competitive in both PvE and PVP</p>
+	   		<p>Codeship Test</p>
 
 	   		<h5>Time Left Until Launch</h5>
 
