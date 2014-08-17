@@ -9,7 +9,7 @@ include 'header.php';
 	   			
 	   		<h1>Welcome to Sinister Divine</h1>
 
-	   		<p>Codeship Test</p>
+	   		<p>New Branch Test</p>
 
 	   		<h5>Time Left Until Launch</h5>
 
