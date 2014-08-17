@@ -25,10 +25,7 @@ body { background: #0f0f0f; }
 /* b. Intro Styles
 /* ------------------------------------------------------------------ */
 
-.error
-{
-    color:red;
-}
+
 #intro {
    text-align: center;
    color: white;
@@ -245,25 +242,51 @@ ul#nav li.current a { color: #0c5ca2; }
     background: #fff;
     color: #0c5ca2;
 }
+
+.submitForm
+{
+    margin:auto;
+    position:relative;
+    width:550px;
+    height:450px;
+}
+
 .gamertagSubmit {
+    display:block;
     font-size: 20px;
     color:white;
     line-height: 30px;
     height: 54px;
     padding: 12px 30px;
-    margin: 0 auto;
     border-radius: 5px;
     border:none;
     background: #0c5ca2;
-
-    width: 30%;
+    width: 100%;
 }
-.gamertagLabel
+.sFormLabel
 {
+    margin-right:4px;
+    vertical-align:top;
+    display:inline-block;
+    text-align: left;
     font-family:'montserrat-regular';
-    font-size: 25px;
+    font-size: 20px;
 }
 
+
+
+.availSelect
+{
+    display:block;
+
+}
+
+.errorLabel
+{
+    display:block;
+    color:red;
+
+}
 
 /* social links */
 #main .social {
