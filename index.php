@@ -7,7 +7,7 @@ include 'header.php';
 
 	   	<div class="twelve columns">
 	   			
-	   		<h1>Welcome to Sinister Divine!</h1>
+	   		<h1>Welcome to Sinister Divine</h1>
 
 	   		<p>We are a Destiny Clan competitive in both PvE and PVP</p>
 
