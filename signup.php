@@ -47,7 +47,7 @@ function test_input($data) {
                 <div class ="input-wrapper">
 
                     <label class="sFormLabel" for="Gamertag">PSN ID:
-                        <input type = "text" id = "Gamertag" name="Gamertag" class ="gamertagSubmit" autofocus required>
+                        <input type = "text" id = "Gamertag" name="Gamertag" class ="gamertagSubmit" autofocus>
                         <?php if(isset($gamertagErr)): ?><small class="error"><?php echo $gamertagErr;?></small><?php endif; ?>
                     </label>
 
