@@ -4,11 +4,10 @@
 include 'header.php';
 include "database.php";
 
-
 $gamertagErr = "";
 $gamertag = "";
 
-
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(!empty($_POST['Gamertag']))
     {
         $exists = $db->query("SELECT * FROM `user` WHERE name = '" . $_POST['Gamertag'] . "'");
@@ -25,12 +24,7 @@ $gamertag = "";
     }else if(empty($_POST['Gamertag'])) {
         $gamertagErr = "* PSN ID is required";
     }
-
-
-
-
-
-
+}
 
 function test_input($data) {
     $data = trim($data);
@@ -39,11 +33,6 @@ function test_input($data) {
     $data = mysql_real_escape_string($data);
     return $data;
 }
-
-
-
-
-
 
 ?>
 
