@@ -13,7 +13,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         if(empty($exists))
         {
-            $db->exec("insert into USER VALUES('". test_input($_POST['Gamertag']) ."') ");
+            if($db->exec("insert into USER VALUES('". test_input($_POST['Gamertag']) ."') ")){
+                $saved = true;
+            }
         }else{
             $gamertagErr = "* PSN ID already exists!";
         }
@@ -40,24 +42,32 @@ function test_input($data) {
 
         <div class ="intro">
 
-            <h1>Sign Up</h1>
+            <?php if(isset($thanks)): ?>
 
-            <form action="signup.php" method="POST">
+                <h1>Sign Up</h1>
 
-                <div class ="input-wrapper">
+                <form action="signup.php" method="POST">
 
-                    <label class="sFormLabel" for="Gamertag">PSN ID:
-                        <input type = "text" id = "Gamertag" name="Gamertag" class ="gamertagSubmit" autofocus>
-                        <?php if(isset($gamertagErr)): ?><small class="error"><?php echo $gamertagErr;?></small><?php endif; ?>
-                    </label>
+                    <div class ="input-wrapper">
 
-                    <div class="large-12 columns">
-                        <button type="submit" class="medium button green">Submit</button>
+                        <label class="sFormLabel" for="Gamertag">PSN ID:
+                            <input type = "text" id = "Gamertag" name="Gamertag" class ="gamertagSubmit" autofocus>
+                            <?php if(isset($gamertagErr)): ?><small class="error"><?php echo $gamertagErr;?></small><?php endif; ?>
+                        </label>
+
+                        <div class="large-12 columns">
+                            <button type="submit" class="medium button green">Submit</button>
+                        </div>
+
                     </div>
 
-                </div>
+                </form>
 
-            </form>
+            <?php elseif($saved): ?>
+
+                <h2>Thanks!</h2>
+
+            <?php endif; ?>
 
         </div>
 
