@@ -54,11 +54,11 @@ function test_input($data) {
 
         <div class ="intro">
             <h1>Sign Up</h1>
-            <form action="signup.php" method="POST" data-abide>
+            <form action="signup.php" method="POST">
                 <div class ="input-wrapper">
 
                     <label class="sFormLabel" for="Gamertag">PSN ID:
-                       <input type = "text" id = "Gamertag" name="Gamertag" class ="gamertagSubmit" autofocus required oninvalid="setCustomValidity('PSN ID is Required')">
+                       <input type = "text" id = "Gamertag" name="Gamertag" class ="gamertagSubmit" autofocus">
                         <small class="error"><?php echo $gamertagErr;?></small>
                     </label>
 
