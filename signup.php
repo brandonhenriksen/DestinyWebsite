@@ -4,9 +4,6 @@
 include 'header.php';
 include "database.php";
 
-$gamertagErr = "";
-$gamertag = "";
-
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(!empty($_POST['Gamertag']))
     {
@@ -42,33 +39,23 @@ function test_input($data) {
     <div class="columns small-12 text-center">
 
         <div class ="intro">
+
             <h1>Sign Up</h1>
-            <form action="signup.php" method="POST" data-abide>
+
+            <form action="signup.php" method="POST">
+
                 <div class ="input-wrapper">
 
                     <label class="sFormLabel" for="Gamertag">PSN ID:
-                       <input type = "text" id = "Gamertag" name="Gamertag" class ="gamertagSubmit" autofocus required oninvalid="setCustomValidity('PSN ID is Required')">
-                        <small class="error"><?php echo $gamertagErr;?></small>
+                        <input type = "text" id = "Gamertag" name="Gamertag" class ="gamertagSubmit" autofocus required>
+                        <?php if(isset($gamertagErr)): ?><small class="error"><?php echo $gamertagErr;?></small><?php endif; ?>
                     </label>
-
 
                     <div class="large-12 columns">
                         <button type="submit" class="medium button green">Submit</button>
                     </div>
 
                 </div>
-
-
-
-
-
-
-
-
-                </div>
-
-
-
 
             </form>
 
