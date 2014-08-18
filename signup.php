@@ -63,7 +63,7 @@ function test_input($data) {
 
                 </form>
 
-            <?php elseif($saved): ?>
+            <?php elseif(isset($saved) && $saved): ?>
 
                 <h2>Thanks!</h2>
 
