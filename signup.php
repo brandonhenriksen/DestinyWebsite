@@ -8,7 +8,7 @@ include "database.php";
 $gamertagErr = "";
 $gamertag = "";
 
-if(request type = post){
+
     if(!empty($_POST['Gamertag']))
     {
         $exists = $db->query("SELECT * FROM `user` WHERE name = '" . $_POST['Gamertag'] . "'");
@@ -25,7 +25,7 @@ if(request type = post){
     }else if(empty($_POST['Gamertag'])) {
         $gamertagErr = "* PSN ID is required";
     }
-}
+
 
 
 
