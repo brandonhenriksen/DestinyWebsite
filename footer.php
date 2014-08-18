@@ -10,15 +10,18 @@
 
 <!-- Java Script
 ================================================== -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-<script src="js/waypoints.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.1/js/foundation/foundation.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.1/js/foundation/foundation.abide.min.js"></script>
 <script src="js/jquery.countdown.js"></script>
-<script src="js/jquery.placeholder.js"></script>
-<script src="js/backstretch.js"></script>
 <script src="js/init.js"></script>
 
 </body>
+
+
 
 </html>

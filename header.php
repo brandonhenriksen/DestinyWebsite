@@ -17,51 +17,33 @@
 
     <!-- Mobile Specific Metas
     ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/media-queries.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.1/css/foundation.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- Script
     ================================================== -->
-    <script src="js/modernizr.js"></script>
 
-    <!-- Favicons
-     ================================================== -->
-    <link rel="shortcut icon" href="favicon.png" >
+
 
 </head>
 
+
 <body>
 
-<div id="preloader">
-    <div id="status">
-        <img src="images/preloader.gif" height="64" width="64" alt="">
-    </div>
-</div>
+<nav id="nav-wrap">
 
-<!-- Intro Section
-================================================== -->
-<section id="intro">
+    <a class="menu-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+    <a class="menu-btn" href="#" title="Hide navigation">Hide navigation</a>
 
-    <header class="row">
+    <ul id="nav" class="nav">
+        <li class="current"><a class="smoothscroll" href="index.php">Home</a></li>
 
 
+    </ul> <!-- end #nav -->
 
-        <nav id="nav-wrap">
-
-            <a class="menu-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-            <a class="menu-btn" href="#" title="Hide navigation">Hide navigation</a>
-
-            <ul id="nav" class="nav">
-                <li class="current"><a class="smoothscroll" href="index.php">Home</a></li>
-
-
-            </ul> <!-- end #nav -->
-
-        </nav> <!-- end #nav-wrap -->
-
-    </header> <!-- Header End -->
+</nav> <!-- end #nav-wrap -->

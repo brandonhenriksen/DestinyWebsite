@@ -4,37 +4,39 @@
 include 'header.php';
 include "database.php";
 
+
 $gamertagErr = "";
 $gamertag = "";
 
-
-if(!empty($_POST['Gamertag']))
-{
-    $exists = $db->query("SELECT * FROM `user` WHERE name = '" . $_POST['Gamertag'] . "'");
-
-    $exists = $exists->fetch();
-
-    if(empty($exists))
+if(request type = post){
+    if(!empty($_POST['Gamertag']))
     {
-        $db->exec("insert into USER VALUES('". $_POST['Gamertag'] ."') ");
-    }else{
-        $gamertagErr = "* PSN ID already exists!";
-    }
+        $exists = $db->query("SELECT * FROM `user` WHERE name = '" . $_POST['Gamertag'] . "'");
 
-}
+        $exists = $exists->fetch();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if(empty($_POST['Gamertag'])){
+        if(empty($exists))
+        {
+            $db->exec("insert into USER VALUES('". test_input($_POST['Gamertag']) ."') ");
+        }else{
+            $gamertagErr = "* PSN ID already exists!";
+        }
+
+    }else if(empty($_POST['Gamertag'])) {
         $gamertagErr = "* PSN ID is required";
-    }else{
-        $gamertag = test_input($_POST["Gamertag"]);
     }
 }
+
+
+
+
+
 
 function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
+    $data = mysql_real_escape_string($data);
     return $data;
 }
 
@@ -45,32 +47,43 @@ function test_input($data) {
 
 ?>
 
-<div id = "main">
-    <div id = "mc_embed_signup">
+<div class="container moon-background">
+    <div class="row ">
 
-        <form action="signup.php" method="post">
-            <div class ="submitForm">
-                <h1>Sign Up</h1>
-                <label class="sFormLabel" for="Gamertag">
-                   <span>PSN ID:</span><input type = "text" id = "Gamertag" name="Gamertag" class ="gamertagSubmit">
-                    <label class="errorLabel"> <?php echo $gamertagErr;?></label>
-                    <br/>
-                </label>
+    <div class="columns small-12 text-center">
 
+        <div class ="intro">
+            <h1>Sign Up</h1>
+            <form action="signup.php" method="POST" data-abide>
+                <div class ="input-wrapper">
 
-
-
-
+                    <label class="sFormLabel" for="Gamertag">PSN ID:
+                       <input type = "text" id = "Gamertag" name="Gamertag" class ="gamertagSubmit" autofocus required oninvalid="setCustomValidity('PSN ID is Required')">
+                        <small class="error"><?php echo $gamertagErr;?></small>
+                    </label>
 
 
+                    <div class="large-12 columns">
+                        <button type="submit" class="medium button green">Submit</button>
+                    </div>
 
-            </div>
+                </div>
 
 
 
 
-        </form>
 
+
+
+
+                </div>
+
+
+
+
+            </form>
+
+        </div>
 
     </div>
 </div>
