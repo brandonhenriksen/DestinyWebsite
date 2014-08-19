@@ -5,22 +5,22 @@ include 'header.php';
 include "database.php";
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    if(!empty($_POST['Gamertag']))
+    if(!empty($_POST['PSN_ID']))
     {
-        $exists = $db->query("SELECT * FROM `user` WHERE name = '" . $_POST['Gamertag'] . "'");
+        $exists = $db->query("SELECT * FROM `user` WHERE name = '" . $_POST['PSN_ID'] . "'");
 
         $exists = $exists->fetch();
 
         if(empty($exists))
         {
-            if($db->exec("insert into USER VALUES('". test_input($_POST['Gamertag']) ."') ")){
+            if($db->exec("insert into USER VALUES('". test_input($_POST['PSN_ID']) ."') ")){
                 $saved = true;
             }
         }else{
             $gamertagErr = "* PSN ID already exists!";
         }
 
-    }else if(empty($_POST['Gamertag'])) {
+    }else if(empty($_POST['PSN_ID'])) {
         $gamertagErr = "* PSN ID is required";
     }
 }
@@ -53,14 +53,14 @@ function test_input($data) {
 
                     <div class ="row">
 
-                        <label class="sFormLabel error" for="Gamertag">PSN ID:
+                        <label class="sFormLabel error" for="PSN_ID">PSN ID:
                             </label>
                     </div>
 
                     <div class ="row">
                         <div class="large-12 columns">
-                            <label class="sFormLabel error" for="Gamertag">
-                                <input type = "text" id = "Gamertag" name="Gamertag" class ="gamertagSubmit">
+                            <label class="sFormLabel error" for="PSN_ID">
+                                <input type = "text" id = "PSN_ID" name="PSN_ID" class ="psnSubmit">
                                 <?php if(isset($gamertagErr)): ?><small class="error"><?php echo $gamertagErr;?></small><?php endif; ?>
                             </label>
                         </div>
