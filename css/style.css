@@ -170,6 +170,11 @@ body
     color: #0c5ca2;
 }
 
+.availSelect{
+    position: relative;
+    margin: auto;
+    width: 1000px;
+}
 
 
 .psnSubmit
