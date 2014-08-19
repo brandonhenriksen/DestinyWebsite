@@ -6,36 +6,37 @@ include "database.php";
 //if post request
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-    //if post request has value 'Gamertag'
-    if(!empty($_POST['Gamertag']))
+
+    //if post request has value 'PSN_ID'
+    if(!empty($_POST['PSN_ID']))
     {
         //try-catch block for database actions, they throw exceptions
         try{
 
             $statement = $db->prepare("SELECT count(*) FROM user WHERE name = :gamertag");
-            $statement->bindValue(':gamertag', $_POST['Gamertag']);
+            $statement->bindValue(':PSN_ID', $_POST['PSN_ID']);
             $statement->execute();
 
             if($statement->fetchColumn() != 0){
 
                 $gamertagErr = "* PSN ID already exists!";
 
-            }else{
+            }else {
 
                 $statement = $db->prepare("insert into user VALUES(:gamertag)");
-                $statement->bindValue(':gamertag', $_POST['Gamertag']);
+                $statement->bindValue(':PSN_ID', $_POST['PSN_ID']);
                 $statement->execute();
 
             }
-
         }catch(PDOException $e) {
 
-            echo 'Exception -> ';
-            var_dump($e->getMessage());
+        echo 'Exception -> ';
+        var_dump($e->getMessage());
 
         }
 
-    }else if(empty($_POST['Gamertag'])) {
+
+    }else if(empty($_POST['PSN_ID'])) {
 
         $gamertagErr = "* PSN ID is required";
 
@@ -64,14 +65,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
                     <div class ="row">
 
-                        <label class="sFormLabel error" for="Gamertag">PSN ID:
+                        <label class="sFormLabel error" for="PSN_ID">PSN ID:
                             </label>
                     </div>
 
                     <div class ="row">
                         <div class="large-12 columns">
-                            <label class="sFormLabel error" for="Gamertag">
-                                <input type = "text" id = "Gamertag" name="Gamertag" class ="gamertagSubmit">
+                            <label class="sFormLabel error" for="PSN_ID">
+                                <input type = "text" id = "PSN_ID" name="PSN_ID" class ="psnSubmit">
                                 <?php if(isset($gamertagErr)): ?><small class="error"><?php echo $gamertagErr;?></small><?php endif; ?>
                             </label>
                         </div>
