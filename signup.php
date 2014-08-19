@@ -84,9 +84,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                     </div>
 
                     <div class ="row">
-                        <div class="large-6 columns">
+                        <div class="large-3 columns availSelect">
                             <label class="sFormLabel error">Days Available
-                                <select>
+                                <select class="small">
                                     <option value="monday">Monday</option>
                                     <option value="tuesday">Tuesday</option>
                                     <option value="wednesday">Wednesday</option>
@@ -98,9 +98,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                             </label>
                         </div>
 
-                        <div class="large-6 columns">
+                        <div class="large-3 columns availSelect">
                             <label class="sFormLabel error">Times Available
-                                <select>
+                                <select class="small">
                                     <option DISABLED>Placeholder for Slider</option>
 
                                 </select>
@@ -109,11 +109,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                         
                     </div>
 
-                    <div class="large-12 columns">
-                        <button type="submit" class="button radius roundButton">Submit</button>
-                    </div>
-                </form>
 
+                </form>
+            <div class="large-12 columns">
+                <button type="submit" class="button radius roundButton">Submit</button>
+            </div>
         </div>
 
     </div>

@@ -193,13 +193,17 @@ body
     margin-top: 10px;
     vertical-align:top;
     display:inline-block;
-    text-align: left;
+    text-align: center;
     font-family:'montserrat-regular', sans-serif;
     font-size: 20px;
     color: white !important;
 }
 
-
+.availSelect{
+    position: relative;
+    margin: auto;
+    width:1000px;
+}
 
 
 
