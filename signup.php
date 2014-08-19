@@ -53,7 +53,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         <div class ="intro text-center">
 
 
-            <?php if(isset($thanks)): ?>
+
 
                 <h1>Sign Up</h1>
 
@@ -113,12 +113,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                         <button type="submit" class="button radius roundButton">Submit</button>
                     </div>
                 </form>
-
-            <?php elseif(isset($saved) && $saved): ?>
-
-                <h2>Thanks!</h2>
-
-            <?php endif; ?>
 
         </div>
 
