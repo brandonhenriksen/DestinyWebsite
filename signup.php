@@ -1,36 +1,46 @@
-<?php error_reporting(-1); ini_set('display_errors', 1); ini_set('html_errors', 1);
+<?php error_reporting(-1); ini_set('display_errors', 'On'); ini_set('html_errors', 1);
 
-//
 include 'header.php';
 include "database.php";
 
+//if post request
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+    //if post request has value 'Gamertag'
     if(!empty($_POST['Gamertag']))
     {
-        $exists = $db->query("SELECT * FROM `user` WHERE name = '" . $_POST['Gamertag'] . "'");
+        //try-catch block for database actions, they throw exceptions
+        try{
 
-        $exists = $exists->fetch();
+            $statement = $db->prepare("SELECT count(*) FROM user WHERE name = :gamertag");
+            $statement->bindValue(':gamertag', $_POST['Gamertag']);
+            $statement->execute();
 
-        if(empty($exists))
-        {
-            if($db->exec("insert into USER VALUES('". test_input($_POST['Gamertag']) ."') ")){
-                $saved = true;
+            if($statement->fetchColumn() != 0){
+
+                $gamertagErr = "* PSN ID already exists!";
+
+            }else{
+
+                $statement = $db->prepare("insert into user VALUES(:gamertag)");
+                $statement->bindValue(':gamertag', $_POST['Gamertag']);
+                $statement->execute();
+
             }
-        }else{
-            $gamertagErr = "* PSN ID already exists!";
+
+        }catch(PDOException $e) {
+
+            echo 'Exception -> ';
+            var_dump($e->getMessage());
+
         }
 
     }else if(empty($_POST['Gamertag'])) {
-        $gamertagErr = "* PSN ID is required";
-    }
-}
 
-function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    $data = mysql_real_escape_string($data);
-    return $data;
+        $gamertagErr = "* PSN ID is required";
+
+    }
+
 }
 
 ?>
@@ -42,32 +52,20 @@ function test_input($data) {
 
         <div class ="intro">
 
-            <?php if(isset($thanks)): ?>
+            <h1>Sign Up</h1>
 
-                <h1>Sign Up</h1>
+            <form action="signup.php" method="POST">
 
-                <form action="signup.php" method="POST">
+                <div class ="input-wrapper">
 
-                    <div class ="input-wrapper">
+                    <label class="sFormLabel error" for="Gamertag">PSN ID:
+                        <input type = "text" id = "Gamertag" name="Gamertag" class ="gamertagSubmit" autofocus>
+                        <?php if(isset($gamertagErr)): ?><small class="error"><?php echo $gamertagErr;?></small><?php endif; ?>
+                    </label>
 
-                        <label class="sFormLabel error" for="Gamertag">PSN ID:
-                            <input type = "text" id = "Gamertag" name="Gamertag" class ="gamertagSubmit" autofocus>
-                            <?php if(isset($gamertagErr)): ?><small class="error"><?php echo $gamertagErr;?></small><?php endif; ?>
-                        </label>
+                </div>
 
-                        <div class="large-12 columns">
-                            <button type="submit" class="medium button green">Submit</button>
-                        </div>
-
-                    </div>
-
-                </form>
-
-            <?php elseif(isset($saved) && $saved): ?>
-
-                <h2>Thanks!</h2>
-
-            <?php endif; ?>
+            </form>
 
         </div>
 
