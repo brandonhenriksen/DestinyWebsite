@@ -71,7 +71,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                     <div class ="row">
                         <div class="large-12 columns">
                             <label class="sFormLabel error" for="Gamertag">
-                                <input type = "text" id = "Gamertag" name="Gamertag" class ="gamertagSubmit" autofocus>
+                                <input type = "text" id = "Gamertag" name="Gamertag" class ="gamertagSubmit">
                                 <?php if(isset($gamertagErr)): ?><small class="error"><?php echo $gamertagErr;?></small><?php endif; ?>
                             </label>
                         </div>
