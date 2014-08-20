@@ -18,6 +18,8 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.1/js/foundation/foundation.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.1/js/foundation/foundation.abide.min.js"></script>
 <script src="js/jquery.countdown.js"></script>
+<script src="js/jquery-ui-1.8.16.custom.min.js"></script>
+<script src="js/jQEditRangeSlider-withRuler-min.js"></script>
 <script src="js/init.js"></script>
 
 </body>

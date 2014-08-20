@@ -1,4 +1,6 @@
 @import url("fonts.css");
+@import url("fontello/css/fontello.css");
+@import url("font-awesome/css/font-awesome.min.css");
 
 .moon-background
 {
@@ -181,14 +183,28 @@ body
 {
     display: block;
     font-size: 20px !important;
-    color: white !important;
+    color: #0c5ca2 !important;
     line-height: 30px !important;
     height: 54px !important;
-    padding: 12px 30px !important;
     border-radius: 5px !important;
     border: none !important;
-    background-color: #0c5ca2 !important;
+    background-color: #ffffff !important;
     width: 100% !important;
+    padding-left:30px !important;
+    background-image: url("../images/psnid.png");
+    background-position: 10px center !important;
+    background-repeat: no-repeat !important;
+    text-indent: 30px !important;
+}
+
+.psnSubmit:focus
+{
+    border:none !important;
+    padding-left:30px !important;
+    background-image: url("../images/psnid.png") !important;
+    background-position: 10px center !important;
+    background-repeat: no-repeat !important;
+    text-indent: 30px !important;
 }
 
 .sFormLabel
@@ -203,30 +219,6 @@ body
     font-size: 20px;
     color: white !important;
 }
-
-input{
-    border:none;
-    padding-left:20px;
-    background-image: url("../images/psnid.png");
-    background-position: 10px center;
-    background-repeat: no-repeat;
-    text-indent: 30px;
-}
-
-input[type="text"]:focus{
-    border:none;
-    padding-left:20px;
-    background-image: url("../images/psnid.png");
-    background-position: 10px center;
-    background-repeat: no-repeat;
-    text-indent: 30px;
-}
-
-
-
-
-
-
 
 @media (max-width:557px )
 {
@@ -267,3 +259,47 @@ input[type="text"]:focus{
     color: rgba(255, 255, 255,.6);
     text-shadow: 0 1px 2px rgba(0, 0, 0, .7);
 }
+
+/* Range Slider */
+
+.ui-sliderDemo{
+    margin-bottom:50px;
+}
+
+.slider,
+.dateSlider{
+    width:100%;
+    margin:20px auto;
+    padding-top:20px;
+}
+.tick{
+    border-left:1px solid black;
+    position:absolute;
+    top:0;
+    height:20px;
+    text-align:right;
+}
+.sliderZone dl input{
+    text-align:right;
+    margin-left:5px;
+    margin-right:0;
+    width:200px;
+}
+.sliderZone img{
+    vertical-align:middle;
+}
+
+.sliderZone dl{
+    margin-bottom:50px;
+}
+
+.sliderZone{
+    height:40px;
+    margin-right:400px;
+}
+
+.wrapper{
+    width:100%;
+    float:left;
+}
+

@@ -72,7 +72,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                     <div class ="row">
                         <div class="large-12 columns">
                             <label class="sFormLabel error" for="PSN_ID">
-                                <input type = "text" id = "PSN_ID" name="PSN_ID" class ="psnSubmit">
+                                <input type ="text" id = "PSN_ID" name="PSN_ID" class ="psnSubmit">
                                 <?php if(isset($gamertagErr)): ?><small class="error"><?php echo $gamertagErr;?></small><?php endif; ?>
                             </label>
                         </div>
