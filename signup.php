@@ -70,7 +70,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                     </div>
 
                     <div class ="row">
-                        <div class="large-12 columns">
+                        <div class="large-4 large-centered columns">
                             <label class="sFormLabel error" for="PSN_ID">
                                 <input type ="text" id = "PSN_ID" name="PSN_ID" class ="psnSubmit">
                                 <?php if(isset($gamertagErr)): ?><small class="error"><?php echo $gamertagErr;?></small><?php endif; ?>
@@ -84,36 +84,49 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                         </div>
                     </div>
 
-                    <div class ="row">
-                        <div class="large-3 columns availSelect">
-                            <label class="sFormLabel error">Days Available
-                                <select class="small">
-                                    <option value="monday">Monday</option>
-                                    <option value="tuesday">Tuesday</option>
-                                    <option value="wednesday">Wednesday</option>
-                                    <option value="thursday">Thursday</option>
-                                    <option value="friday">Friday</option>
-                                    <option value="saturday">Saturday</option>
-                                    <option value="sunday">Sunday</option>
-                                </select>
-                            </label>
+
+                        <div class="row daySelect">
+
+                           <h2 class="sFormLabel error">Days Available</h2>
+
+                                <div class ="row">
+                                    <button class="smallMainButton" type="button">Monday</button>
+                                    <button class="smallMainButton" type="button">Tuesday</button>
+                                </div>
+
+                                <div class ="row">
+                                    <button class="smallMainButton" type="button">Wednesday</button>
+                                    <button class="smallMainButton" type="button">Thursday</button>
+                                </div>
+
+
+                                <div class ="row">
+                                    <button class="smallMainButton" type="button">Friday</button>
+                                    <button class="smallMainButton" type="button">Saturday</button>
+                                </div>
+
+                                <div class ="row">
+                                    <button class="smallMainButton" type="button">Sunday</button>
+                                </div>
+
+
                         </div>
 
-                        <div class="large-3 columns availSelect">
-                            <label class="sFormLabel error">Times Available
-                                <select class="small">
-                                    <option DISABLED>Placeholder for Slider</option>
+                        <div class="row availSelect">
+                            <label for= "availSelect" class="sFormLabel error">Times Available</label>
+                            <select id="availSelect">
+                                <option DISABLED>Placeholder for Slider</option>
 
-                                </select>
-                            </label>
+                            </select>
+
                         </div>
                         
-                    </div>
+
 
 
                 </form>
             <div class="large-12 columns">
-                <button type="submit" class="button radius roundButton">Submit</button>
+                <button type="submit" class="mainButton">Submit</button>
             </div>
         </div>
 
