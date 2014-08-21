@@ -2,11 +2,13 @@
 
 include 'header.php';
 ?>
-<section>
-<div class="container moon-background">
 
 
-        <div class="row">
+
+
+<section class="container moon-background">
+
+    <div class="row">
 
         <div class="columns small-12 text-center ">
 
@@ -30,18 +32,18 @@ include 'header.php';
                     <button class="mainButton">Join Clan</button>
                 </a>
 
-        </div>
+            </div>
 
-      </div> <!-- main end -->
-
-</div> <!-- end intro section -->
+        </div> <!-- main end -->
+    </div>
+ <!-- end intro section -->
 </section>
 
 
 
 <!-- About Section
 ================================================== -->
-<section>
+
     <div class="row">
         <h1>Event Calendar</h1>
 
@@ -49,7 +51,7 @@ include 'header.php';
             <iframe src="https://www.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=4nnliefqr3s0deahkgl4rnta1o%40group.calendar.google.com&amp;color=%23875509&amp;ctz=America%2FChicago" style=" border-width:0 " width="900" height="600" frameborder="0" scrolling="no"></iframe>
         </div>
     </div>
-</section>
+
 
 
 
