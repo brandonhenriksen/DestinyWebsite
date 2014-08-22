@@ -1,5 +1,28 @@
 <?php
 
-$body = json_decode($app->request->getBody());
+$submission = json_decode($app->request->getBody());
 
-print_r($body);
+$query=$db->query("select count(id) as `exists` from user where psn_name ='".$submission->psn_name."'");
+$exists=$query->fetch();
+
+if(!$exists["exists"]){
+    $db->exec("insert into user (psn_name) VALUES ('".$submission->psn_name."')");
+    $query=$db->query("select id from user where psn_name = '".$submission->psn_name."'");
+    $user=$query->fetch();
+    $id=$user["id"];
+
+
+    foreach($submission->days as $day){
+        $db->exec("insert into user_days (user_id,days_id) VALUES ('".$id."','".$day."')");
+    }
+    foreach($submission->times as $time){
+        $db->exec("insert into user_times (user_id,times_id) VALUES ('".$id."','".$time."')");
+    }
+    echo json_encode(array("success"=>"1"));
+}else{
+    echo json_encode(array("error"=>"PSN ID already exists!"));
+}
+
+
+
+

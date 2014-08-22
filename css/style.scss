@@ -12,6 +12,22 @@ $fa-font-path: '../bower_components/font-awesome/fonts';
 
 }
 
+.calendarContainer{
+  text-align: center;
+  background-color: #0c5ca2;
+}
+
+.successMessage{
+  text-align: center;
+  font-size: large;
+  margin-top: 40%;
+  padding-bottom: 60%;
+}
+.errorMessage{
+  min-height: 30px;
+  color:red;
+}
+
 #nav-wrap
 {
   font: 11px 'montserrat-bold', sans-serif;
@@ -123,7 +139,13 @@ p
 
 }
 
-
+h3{
+  font-family: 'montserrat-bold', sans-serif;
+  color: #0c5ca2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .7);
+}
 h5
 {
   font: 13px/24px 'montserrat-bold', sans-serif;
@@ -284,15 +306,15 @@ body
 }
 
 /* default screen, non-retina */
-.hero #cafe { background-image: url("../images/header-background.jpg"); }
+.moon-background { background-image: url("../images/header-background.jpg"); }
 
 @media only screen and (max-width: 320px) {
   /* Small screen, non-retina */
-  .hero #cafe { background-image: url("../images/header-background.jpg"); }
+  .moon-background { background-image: url("../images/header-background.jpg"); }
 }
 
 @media only screen and (min-width: 321px) and (max-width: 538px) {
   /* Medium screen, non-retina */
-  .hero #cafe { background-image: url("../images/header-background.jpg"); }
+  .moon-background { background-image: url("../images/header-background.jpg"); }
 }
 

@@ -2757,6 +2757,20 @@ blockquote, blockquote p {
   background-image: url("../images/header-background.jpg");
   width: 100%; }
 
+.calendarContainer {
+  text-align: center;
+  background-color: #0c5ca2; }
+
+.successMessage {
+  text-align: center;
+  font-size: large;
+  margin-top: 40%;
+  padding-bottom: 60%; }
+
+.errorMessage {
+  min-height: 30px;
+  color: red; }
+
 #nav-wrap {
   font: 11px 'montserrat-bold', sans-serif;
   text-transform: uppercase;
@@ -2831,6 +2845,13 @@ h1 {
   font: 35px/1.2em 'montserrat-bold', sans-serif;
   color: #ffffff;
   text-decoration: underline; }
+
+h3 {
+  font-family: 'montserrat-bold', sans-serif;
+  color: #0c5ca2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7); }
 
 h5 {
   font: 13px/24px 'montserrat-bold', sans-serif;
@@ -2979,15 +3000,15 @@ body {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7); }
 
 /* default screen, non-retina */
-.hero #cafe {
+.moon-background {
   background-image: url("../images/header-background.jpg"); }
 
 @media only screen and (max-width: 320px) {
   /* Small screen, non-retina */
-  .hero #cafe {
+  .moon-background {
     background-image: url("../images/header-background.jpg"); } }
 
 @media only screen and (min-width: 321px) and (max-width: 538px) {
   /* Medium screen, non-retina */
-  .hero #cafe {
+  .moon-background {
     background-image: url("../images/header-background.jpg"); } }

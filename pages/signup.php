@@ -1,66 +1,35 @@
-<?php
 
-//if post request
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-    //if post request has value 'PSN_ID'
-    if(!empty($_POST['PSN_ID']))
-    {
-        //try-catch block for database actions, they throw exceptions
-        try{
-
-            $statement = $db->prepare("SELECT count(*) FROM user WHERE name = :gamertag");
-            $statement->bindValue(':PSN_ID', $_POST['PSN_ID']);
-            $statement->execute();
-
-            if($statement->fetchColumn() != 0){
-
-              $gamertagErr = "* PSN ID already exists!";
-
-            }else {
-
-                $statement = $db->prepare("insert into user VALUES(:gamertag)");
-                $statement->bindValue(':PSN_ID', $_POST['PSN_ID']);
-                $statement->execute();
-
-            }
-
-        }catch(PDOException $e) {
-
-            echo 'Exception -> ';
-            var_dump($e->getMessage());
-
-        }
-
-    }else if(empty($_POST['PSN_ID'])) {
-        $gamertagErr = "* PSN ID is required";
-    }
-}
-
-?>
-
-<div class="container moon-background">
+<div class="container moon-background" ng-controller="AvailabilityController">
 
     <div class="row">
 
-        <div class="columns small-12 text-center intro">
+        <div ng-if="success" class="successMessage">Thanks</div>
+
+        <div class="columns small-12 text-center intro" ng-if="!success">
 
             <h1>Sign Up</h1>
 
-            <form ng-submit="submit('/api/addUser')" ng-controller="AvailabilityController">
+            <form ng-submit="submit('/api/addUser')">
 
                 <div class ="row">
 
-                    <label class="sFormLabel error" for="PSN_ID">PSN ID:
+                    <label class="sFormLabel error" for="psn_name">PSN ID:
                     </label>
                 </div>
 
                 <div class ="row">
                     <div class="large-4 large-centered columns">
-                        <label class="sFormLabel error" for="PSN_ID">
-                            <input ng-model="availability.PSN_ID" type ="text" id = "PSN_ID" name="PSN_ID" class ="psnSubmit">
-                            <?php if(isset($gamertagErr)): ?><small class="error"><?php echo $gamertagErr;?></small><?php endif; ?>
+                        <label class="sFormLabel error" for="psn_name">
+                            <input ng-model="availability.psn_name" type ="text" id = "psn_name" name="psn_name" class ="psnSubmit">
                         </label>
+                    </div>
+                </div>
+
+                <div class ="row errorMessage" >
+
+                    <div class="large-4 large-centered columns" ng-if="error">
+                        <span>{{error}}</span>
                     </div>
                 </div>
 
@@ -75,19 +44,19 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                     <h2 class="sFormLabel error">Days Available</h2>
 
                     <div class ="row">
-                        <button ng-class="{smallMainButtonActive: availability.days.monday, smallMainButton: !availability.days.monday}" ng-click="toggleDay('monday')" type="button">Monday</button>
-                        <button ng-class="{smallMainButtonActive: availability.days.tuesday, smallMainButton: !availability.days.tuesday}" ng-click="toggleDay('tuesday')" type="button">Tuesday</button>
-                        <button ng-class="{smallMainButtonActive: availability.days.wednesday, smallMainButton: !availability.days.wednesday}" ng-click="toggleDay('wednesday')" type="button">Wednesday</button>
+                        <button ng-class="{smallMainButtonActive: availability.days.indexOf(1) > -1, smallMainButton: availability.days.indexOf(1) === -1}" ng-click="toggleDay(1)" type="button">Monday</button>
+                        <button ng-class="{smallMainButtonActive: availability.days.indexOf(2) > -1, smallMainButton: availability.days.indexOf(2) === -1}" ng-click="toggleDay(2)" type="button">Tuesday</button>
+                        <button ng-class="{smallMainButtonActive: availability.days.indexOf(3) > -1, smallMainButton: availability.days.indexOf(3) === -1}" ng-click="toggleDay(3)" type="button">Wednesday</button>
                     </div>
 
                     <div class ="row">
-                        <button ng-class="{smallMainButtonActive: availability.days.thursday, smallMainButton: !availability.days.thursday}" ng-click="toggleDay('thursday')" type="button">Thursday</button>
-                        <button ng-class="{smallMainButtonActive: availability.days.friday, smallMainButton: !availability.days.friday}" ng-click="toggleDay('friday')" type="button">Friday</button>
-                        <button ng-class="{smallMainButtonActive: availability.days.saturday, smallMainButton: !availability.days.saturday}" ng-click="toggleDay('saturday')" type="button">Saturday</button>
+                        <button ng-class="{smallMainButtonActive: availability.days.indexOf(4) > -1, smallMainButton: availability.days.indexOf(4) === -1}" ng-click="toggleDay(4)" type="button">Thursday</button>
+                        <button ng-class="{smallMainButtonActive: availability.days.indexOf(5) > -1, smallMainButton: availability.days.indexOf(5) === -1}" ng-click="toggleDay(5)" type="button">Friday</button>
+                        <button ng-class="{smallMainButtonActive: availability.days.indexOf(6) > -1, smallMainButton: availability.days.indexOf(6) === -1}" ng-click="toggleDay(6)" type="button">Saturday</button>
                     </div>
 
                     <div class ="row">
-                        <button ng-class="{smallMainButtonActive: availability.days.sunday, smallMainButton: !availability.days.sunday}" ng-click="toggleDay('sunday')" type="button">Sunday</button>
+                        <button ng-class="{smallMainButtonActive: availability.days.indexOf(7) > -1, smallMainButton: availability.days.indexOf(7) === -1}" ng-click="toggleDay(7)" type="button">Sunday</button>
                     </div>
 
                 </div>
@@ -95,9 +64,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 <div class="row availSelect">
                     <label for= "availSelect" class="sFormLabel error">Times Available</label>
                     <div class ="row">
-                        <button ng-class="{smallMainButtonActive: availability.times['first'], smallMainButton: !availability.times['first']}" ng-click="toggleTime('first')"  type="button">first</button>
-                        <button ng-class="{smallMainButtonActive: availability.times['second'], smallMainButton: !availability.times['second']}" ng-click="toggleTime('second')" type="button">second</button>
-                        <button ng-class="{smallMainButtonActive: availability.times['third'], smallMainButton: !availability.times['third']}" ng-click="toggleTime('third')"  type="button">third</button>
+
+                        <button ng-class="{smallMainButtonActive: availability.times.indexOf(1) > -1, smallMainButton: availability.times.indexOf(1) === -1}" ng-click="toggleTime(1)"  type="button">5pm-8pm</button>
+                        <button ng-class="{smallMainButtonActive: availability.times.indexOf(2) > -1, smallMainButton: availability.times.indexOf(2) === -1}" ng-click="toggleTime(2)" type="button">8pm-11pm</button>
+                        <button ng-class="{smallMainButtonActive: availability.times.indexOf(3) > -1, smallMainButton: availability.times.indexOf(3) === -1}" ng-click="toggleTime(3)"  type="button">11pm-2am</button>
                     </div>
                 </div>
 

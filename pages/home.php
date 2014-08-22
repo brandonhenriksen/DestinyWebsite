@@ -9,7 +9,7 @@
 
                 <p>PS4 Destiny Clan</p>
 
-                <h5>Time Left Until Launch</h5>
+                <h3>Time Left Until Launch</h3>
 
                 <!-- Countdown Timer -->
                 <div class="counter">
@@ -32,12 +32,12 @@
 
 </div>
 
-<div class="container">
+<div class="container calendarContainer">
     <div class="row">
         <h1>Event Calendar</h1>
 
         <div id="calendar">
-            <iframe src="https://www.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=4nnliefqr3s0deahkgl4rnta1o%40group.calendar.google.com&amp;color=%23875509&amp;ctz=America%2FChicago" style=" border-width:0 " width="900" height="600" frameborder="0" scrolling="no"></iframe>
+            <iframe src="https://www.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=4nnliefqr3s0deahkgl4rnta1o%40group.calendar.google.com&amp;color=%23875509&amp;ctz=America%2FChicago" style=" padding:10px; border-width:0; border-radius:15px;" width="900" height="600" frameborder="0" scrolling="no"></iframe>
         </div>
     </div>
 </div>
