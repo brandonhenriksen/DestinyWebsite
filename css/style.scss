@@ -165,7 +165,7 @@ body
 {
   font-family: 'montserrat-regular', sans-serif;
   font-size: 20px;
-  color: white ;
+  color: white;
   line-height: 30px;
   height: 54px;
   padding: 12px 30px;
@@ -173,7 +173,12 @@ body
   border-radius: 5px;
   border: none;
   background: -webkit-linear-gradient(linear, left top, right bottom, from(#3D7DB5), to(#0c5ca2));
+  background: -o-linear-gradient(linear, left top, right bottom, from(#3D7DB5), to(#0c5ca2));
+  background: -moz-linear-gradient(linear, left top, right bottom, from(#3D7DB5), to(#0c5ca2));
+  background: linear-gradient(linear, left top, right bottom, from(#3D7DB5), to(#0c5ca2));
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(61,125,181)), to(rgb(12,92,162)));
+  background-image: -o-gradient(linear, 0% 0%, 0% 100%, from(rgb(61,125,181)), to(rgb(12,92,162)));
+  background-image: -moz-gradient(linear, 0% 0%, 0% 100%, from(rgb(61,125,181)), to(rgb(12,92,162)));
   box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.4), 0 0 1px 1px rgba(86, 172, 239, 0.25) inset;
   width: 30%;
 
@@ -192,18 +197,15 @@ body
 }
 
 .smallMainButtonActive{
+  @include mainButton();
   background: #0c5ca2;
   color: white;
-  @include mainButton();
   width: 15%;
   padding: 5px;
   &:hover{
     background: #0c5ca2;
     color: white;
   }
-
-
-
 }
 
 
