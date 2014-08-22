@@ -40,7 +40,7 @@
 
     <ul id="nav" class="nav">
         <li><a class="smoothscroll" href="../../index.php">Home</a></li>
-        <li><a class="smoothscroll" href="signup.php">Sign Up</a></li>
+        <li><a class="smoothscroll" href="<?php echo $app->router->urlFor('signup'); ?>">Sign Up</a></li>
 
 
     </ul> <!-- end #nav -->
