@@ -20,8 +20,8 @@
     <!-- CSS
     ================================================== -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/iThing.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/iThing.css" type="text/css" />
 
     <!-- Script
     ================================================== -->
@@ -39,7 +39,7 @@
     <a class="menu-btn" href="#" title="Hide navigation">Hide navigation</a>
 
     <ul id="nav" class="nav">
-        <li><a class="smoothscroll" href="index.php">Home</a></li>
+        <li><a class="smoothscroll" href="../../index.php">Home</a></li>
         <li><a class="smoothscroll" href="signup.php">Sign Up</a></li>
 
 

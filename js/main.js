@@ -1,9 +1,21 @@
 angular.module("app", []).controller("AvailabilityController", function($scope, $http){
 
     $scope.availability={
-        PSN_ID:"",
-        days:{},
-        times:{}
+        PSN_ID: null,
+        days:{
+            'monday': false,
+            'tuesday': false,
+            'wednesday': false,
+            'thursday': false,
+            'friday': false,
+            'saturday': false,
+            'sunday': false
+        },
+        times:{
+            'first': false,
+            'second': false,
+            'third': false
+        }
     };
 
     $scope.toggleDay=function(day){
@@ -15,20 +27,15 @@ angular.module("app", []).controller("AvailabilityController", function($scope, 
         $scope.availability.times[time] = !$scope.availability.times[time];
     };
 
-    $scope.submit=function(){
-        $http({
-            method : 'POST',
-            url : 'save.php',
-            data: $scope.availability
+    $scope.submit=function(action){
 
-
-        }).success(function(res){
+        $http.post(action,$scope.availability)
+            .success(function(res){
             console.log(res);
-        }).error(function(error){
+            }).error(function(error){
             console.log(error);
         });
 
     };
-
 
 });
