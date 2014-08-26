@@ -19,6 +19,12 @@ $app->get('/signup', function() use ($app, $db){
     include 'pages/snippets/footer.php';
 })->name('signup');
 
+$app->get('/roster', function() use ($app, $db){
+    include 'pages/snippets/header.php';
+    include 'pages/roster.php';
+    include 'pages/snippets/footer.php';
+})->name('roster');
+
 $app->post('/api/addUser', function() use ($app, $db){
     include 'api/addUser.php';
 })->name('addUser');

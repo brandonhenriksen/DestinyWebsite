@@ -1,5 +1,4 @@
 
-
 <div class="container moon-background" ng-controller="AvailabilityController">
 
     <div class="row">
@@ -10,7 +9,7 @@
 
             <h1>Sign Up</h1>
 
-            <form ng-submit="submit('/api/addUser')">
+            <form>
 
                 <div class ="row">
 
@@ -28,8 +27,8 @@
 
                 <div class ="row errorMessage" >
 
-                    <div class="large-4 large-centered columns" ng-if="error">
-                        <span>{{error}}</span>
+                    <div class="large-4 large-centered columns" ng-if="errors">
+                        <p ng-repeat="error in errors">{{error}}</p>
                     </div>
                 </div>
 
@@ -72,7 +71,7 @@
                 </div>
 
                 <div class="large-12 columns">
-                    <button type="submit" class="mainButton">Submit</button>
+                    <button type="button" ng-click="submit('/api/addUser')" class="mainButton">Submit</button>
                 </div>
 
             </form>

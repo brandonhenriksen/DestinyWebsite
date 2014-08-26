@@ -31,7 +31,7 @@ angular.module("app", []).controller("AvailabilityController", function($scope, 
             if(res.success){
                 $scope.success=true;
             }else{
-                $scope.error=res.error;
+                $scope.errors=res.errors;
             }
             }).error(function(error){
             console.log(error);
